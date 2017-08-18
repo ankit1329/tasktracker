@@ -1,0 +1,115 @@
+<div ng-include src="'partials/adminheader.html'"></div>
+<div class="Container xyz">
+    <div class="row">
+        <div class="Box1 panel">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="task">
+                            <div class="col-md-12">
+                                <div class="col-md-offset-5">
+                                    <!-- <h3 class="content-title"><strong><kbd>Tasks</kbd></strong></h3> -->
+                                </div>
+                                <form class="form-inline">
+                                    <span class=""></span >
+                                    <div class="form-group" >
+				                        <input type="search"
+							            
+							            id="name"
+							            ng-model="search"
+							            placeholder="Search"
+									    />
+                                    </div >
+                                    <!-- <button class="btn btn-md-2 btn-primary pull-right aaa"
+						             ng-click="showCreateModal()" >Create
+						</button > -->
+                            </form >
+                    <div ng-show="filteredTask.length == 0">
+                        <div class="alert alert-info">
+							<p class="text-center">No Tasks To Show</p>
+						</div>
+                    </div>
+                        <div class="row" >
+		                    <div class="col-md-12" >
+                                <table class="table table-bordered table-hover" style="margin-top: 5px" >
+                                <tr >
+					            <th class="col-1">S.No.</th >
+					            <th class="col-2">Subject
+                                    <span ng-click="order = 'subject'"
+                                    ng-hide="order == 'subject'"
+								      class="glyphicon glyphicon-menu-up" ></span >
+                                    <span ng-click="order = '-subject'"
+                                        ng-hide="order == '-subject'"
+								      class="glyphicon glyphicon-menu-down" ></span >
+                                </th >
+					            <th class="col-3">Deadline
+                                    <span ng-click="order = 'deadlineDate'"
+                                    ng-hide="order == 'deadlineDate'"
+								      class="glyphicon glyphicon-menu-up" ></span >
+                                    <span ng-click="order = '-deadlineDate'"
+                                        ng-hide="order == '-deadlineDate'"
+								      class="glyphicon glyphicon-menu-down" ></span >
+                                </th >
+                                <th class="col-4">Status
+                                    <span ng-click="order = 'status'"
+                                    ng-hide="order == 'status'"
+								      class="glyphicon glyphicon-menu-up" ></span >
+                                <span ng-click="order = '-status'"
+                                ng-hide="order == '-status'"
+								      class="glyphicon glyphicon-menu-down" ></span >
+                                </th >
+                                 <th class="col-5">Priority
+                                    <span ng-click="order = 'priority'"
+                                    ng-hide="order == 'priority'"
+								      class="glyphicon glyphicon-menu-up" ></span >
+                                <span ng-click="order = '-priority'"
+                                ng-hide="order == '-priority'"
+								      class="glyphicon glyphicon-menu-down" ></span >
+                                </th >
+                                <th class="col-6">Rating
+                                    <span ng-click="order = 'rating'"
+                                    ng-hide="order == 'rating'"
+								      class="glyphicon glyphicon-menu-up" ></span >
+                                <span ng-click="order = '-rating'"
+                                ng-hide="order == '-rating'"
+								      class="glyphicon glyphicon-menu-down" ></span >
+                                </th >
+                                <th class="col-7">Remarks
+                                    
+                                </th >
+                                <!-- <th class="col-8"> Update </th>               -->
+				                </tr >
+
+				<tr ng-repeat="tas in filteredTask=(task.taskData | filter:sensitiveSearch | orderBy:order)"
+				    ng-style="{
+							 'background-color': tas.subject == task.selectedTask.subject ? '' : ''
+						}"
+				    ng-click="task.selectedTask = tas" templateUrl="/task/update" >
+					<td >{{ $index+1 }}</td >
+					<td >{{ tas.subject }}</td >
+					<td >{{ tas.deadlineDate | date : 'mediumDate'}}</td >
+                    <td >{{ tas.status }}</td >
+                    <td >{{ tas.priority }}</td >
+                    <td >{{ tas.rating }}</td >
+                    <td >{{ tas.remarks.substr(0,55)+'..' }}</td >
+                    <!-- <td ><button class="btn btn-md-2 btn-warning"  ng-click="showUpdateModal()" >Update</button></a></td > -->
+                        
+				</tr >
+				 
+
+
+			</table >
+
+		</div >
+                      
+                     
+                            
+                     
+                 </div>
+             </div>
+         </div>
+           </div>
+           
+
+    </div>
+            </div></div>

@@ -1,0 +1,93 @@
+<div ng-include src="'partials/adminheader.html'"></div>
+<div class="Container xyz">
+    <div class="Box2 panel">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="task">
+                            <div class="col-md-12">
+                                <!-- <h1 class="content-title" style="color:black;text-align:centre">Users</h1> -->
+                                <form class="form-inline">
+                                    <span class=""></span >
+                                    <div class="form-group" >
+				                        <input type="search"
+							            
+							            id="name"
+							            ng-model="search"
+							            placeholder="Search"
+									    />
+                                    </div >
+                                    <button class="btn btn-primary pull-right"
+						             ng-click="showadduserModal()" >Add User
+						</button >
+                            </form >
+                        <div class="row" >
+		                    <div class="col-md-12" >
+                                <table class="table table-bordered" >
+                                <tr >
+					            <th >S.No.</th >
+					            <th >Name
+                                    <span ng-click="order = 'name'"
+								      class="glyphicon glyphicon-menu-up" ></span >
+								    <span ng-click="order = '-name'"
+								      class="glyphicon glyphicon-menu-down" ></span >
+                                </th >
+					            <th >Email
+                                    <span ng-click="order = 'email'"
+								      class="glyphicon glyphicon-menu-up" ></span >
+								    <span ng-click="order = '-email'"
+								      class="glyphicon glyphicon-menu-down" ></span >
+                                </th >
+                                <!-- <th >No. of Tasks
+                                    <span ng-click="order = 'status'"
+								      class="glyphicon glyphicon-menu-up" ></span >
+								<span ng-click="order = '-status'"
+								      class="glyphicon glyphicon-menu-down" ></span >
+                                </th > -->
+                                <th> Action </th>              
+				                </tr >
+
+				<tr ng-repeat="user in filteredUser=(users.userData | filter:sensitiveSearch | orderBy:order)"
+				    ng-style="{
+							 'background-color': user.name == users.selectedUser.name ? 'white' : ''
+						}"
+				    ng-click="users.selectedUser = user" templateUrl="/admin/user/task" >
+					<td >{{ $index }}</td >
+					<td >{{ user.name }}</td >
+					<td >{{ user.email }}</td >
+                    <!-- <td >{{}}</td > -->
+                    <td ><div class="dropdown">
+  <button class="dropbtn">Action</button>
+  <div class="dropdown-content" >
+    <a href="#" ng-click="showAssignModal()">Assign Task</a>
+    <a href="#" ng-click=" deleteuserAccount()">Remove User</a>
+     <a href="/admin/userTaskDetail">Details</a> 
+  </div>
+</div></td >
+                        
+				</tr >
+				 <tr ng-show="filteredUser.length == 0">
+					<td colspan="4">
+						<div class="alert alert-info">
+							<p class="text-center">No results found for search term '{{ search }}'</p>
+						</div>
+					</td>
+				</tr> 
+
+
+			</table >
+
+		</div >
+                      
+                     
+                            
+                     
+                 </div>
+             </div>
+         </div>
+           </div>
+           
+       </div>
+    </div>
+            </div></div>

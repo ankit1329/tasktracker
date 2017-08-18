@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="form-group">
+        <label class="col-sm-1 control-label">Subject</label >
+	<div class="col-sm-5 " >
+		<input type="text"
+		       class="form-control"
+		       name="subject"
+		       ng-model="task.selectedTask.subject"
+			   required
+					   />
+	</div >
+</div >
+<div class="form-group" >
+	<label class="col-sm-1 control-label" >Details</label >
+	<div class="col-sm-5" >
+		<input type="text"
+		       name="body"
+		       class="form-control"
+		       ng-model="task.selectedTask.body"
+		       required />
+	</div >
+</div >
+<div class="form-group" >
+	<label class="col-sm-1 control-label" >Days till deadline</label >
+	<div class="col-sm-5" >
+		<input type="text"
+		       class="form-control"
+		       name="deadlineDate"
+			   ng-model="task.selectedTask.deadlineDate"
+					  required 
+				/>
+	</div >
+</div >
+<div class="form-group" >
+	<label class="col-sm-1 control-label" >Priority</label >
+	<div class="col-sm-5" >
+
+		<select name="priority"
+		        class="form-control"
+		        ng-model="task.selectedTask.priority"
+				id="" 
+						required >
+			<option value="1" >1</option >
+            <option value="2" >2</option >
+            <option value="3" >3</option >
+            <option value="4" >4</option >
+            <option value="5" >5</option >
+		</select >
+	</div >
+</div >
+<div class="form-group" >
+	<label class="col-sm-1 control-label" >Status</label >
+	<div class="col-sm-5" >
+		<select name="status"
+		        class="form-control"
+		        ng-model="task.selectedTask.status"
+		        id="" >
+			<option value="working" >working</option >
+            <option value="pending" >pending</option >
+            <option value="completed" >completed</option >
+		</select >
+	</div >
+
+</div >
+<div class="form-group" >
+	<label class="col-sm-1 control-label" >Rating</label >
+	<div class="col-sm-5" >
+		<select name="rating"
+		        class="form-control"
+		        ng-model="task.selectedTask.rating"
+		        id="" >
+			<option value="1" >1</option >
+            <option value="2" >2</option >
+            <option value="3" >3</option >
+            <option value="4" >4</option >
+            <option value="5" >5</option >
+		</select >
+	</div >
+
+</div >
+<div class="form-group" >
+	<label class="col-sm-1 control-label" >Remarks</label >
+	<div class="col-sm-5" >
+		<textarea name="remark" class="form-control" ng-model="task.selectedTask.remarks">Enter remark here...</textarea>
+	</div >
+
+</div >
+<div class="buttons" >
+    <div class="col-sm-3 col-sm-offset-1" >
+	<button class="btn btn-success btn-block"
+	        ladda="task.isSaving"
+			type="submit" 
+					ng-disabled="createForm.$invalid">Save
+    </button >
+    </div>
+</div >
+</div>

@@ -1,0 +1,58 @@
+<div ng-include src="'partials/adminheader.html'"></div>
+<div class="Container xyz">
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="#">Task Stats</a>
+                </li>
+                <li>
+                    <a href="#">User Stats</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1">
+                        <a href="#menu-toggle" class="btn btn-sm btn-primary pull-left" id="menu-toggle">&times</a>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-4 col-md-offset-1">
+                        <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options"></canvas>
+                    </div>
+
+                    <!-- <div class="col-md-4 col-md-offset-2">
+                        <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options"></canvas>
+                    </div> -->
+                </div>
+                <div class="row">
+                    <div class="col-md-7 col-md-offset-1">
+                        <canvas id="base" class="chart-horizontal-bar" chart-series="barseries" chart-data="bardata" chart-labels="barlabels" chart-options="baroptions"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+
+
+
+</div>

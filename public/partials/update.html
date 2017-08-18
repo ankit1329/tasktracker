@@ -1,0 +1,103 @@
+<div class="container" style="margin-top:100px">
+    <!-- <div ng-if="messages.error" role="alert" class="alert alert-danger">
+                <div ng-repeat="error in messages.error">{{error.msg}}</div>
+            </div> -->
+    <div ng-if="messages.success" role="alert" class="alert alert-success">
+        <div ng-repeat="success in messages.success">{{success}}</div>
+    </div>
+    <div class="row">
+        <label class="col-sm-2 col-sm-offset-1 control-label">Subject</label >
+	<div class="col-sm-8" >
+        {{task.selectedTask.subject}}
+        <br>
+	</div >
+</div >
+<div class="row">
+	<label class="col-sm-2 col-sm-offset-1 control-label" >Body</label >
+	<div class="col-sm-8" >
+        {{task.selectedTask.body}}
+        <br>
+	</div >
+</div >
+<div class="row">
+	<label class="col-sm-2 col-sm-offset-1 control-label" >Assigned Date</label >
+	<div class="col-sm-8" >
+		{{task.selectedTask.assignedDate}}
+        <br>
+	</div >
+</div >
+<div class="row">
+	<label class="col-sm-2 col-sm-offset-1 control-label" >Deadline</label >
+	<div class="col-sm-8" >
+		{{task.selectedTask.deadlineDate}}
+        <br>
+	</div >
+
+</div >
+<div class="row">
+	<label class="col-sm-2 col-sm-offset-1 control-label" >Priority</label >
+	<div class="col-sm-8" >
+		{{task.selectedTask.priority}}
+        <br>
+	</div >
+
+</div >
+<div class="row">
+	<label class="col-sm-2 col-sm-offset-1 control-label" >Members {{$index}}:</label >
+	<div class="col-sm-8" ng-repeat="member in task.selectedTask.members">
+         <tr>  
+             <td>{{member.name}}</td>
+             <td>{{  }}</td>  
+            <td>{{member.email}}</td>
+            </tr>
+        </table>
+	</div >
+    <br>
+</div >
+
+<form ng-submit="updateTask()">
+<div class="form-group row" >
+	<label class="col-sm-2 col-sm-offset-1 control-label" >Remark</label >
+	<div class="col-sm-7" >
+		<textarea name="remark" ng-model="task.selectedTask.remarks">Enter remark here...</textarea>
+	</div >
+
+</div >
+<div class="form-group row" >
+	<label class="col-sm-2 col-sm-offset-1 control-label" >Status</label >
+	<div class="col-sm-3" >
+		<select name="status"
+		        class="form-control"
+		        ng-model="task.selectedTask.status"
+		        id="" >
+			<option value="pending" >Pending</option >
+            <option value="working" >Working</option >
+			<option value="completed" >completed</option >
+		</select >
+	</div >
+</div >
+<div class="form-group row" >
+	<label class="col-sm-2 col-sm-offset-1 control-label" >Ratings</label >
+	<div class="col-sm-3" >
+		<select name="status"
+		        class="form-control"
+		        ng-model="task.selectedTask.rating"
+		        id="" >
+			<option value="1" >1</option >
+            <option value="2" >2</option >
+			<option value="3" >3</option >
+			<option value="4" >4</option >
+			<option value="5" >5</option >
+		</select >
+        
+	</div >
+        <label class="col-sm-1">/5</label >
+</div >
+	<div class="row">
+		<br>
+		<br>
+		<button class="btn btn-md-1 btn-success col-sm-2 col-sm-offset-4">Update</button>
+	</div>
+</form>
+
+</div>

@@ -1,0 +1,18 @@
+<div id="updateModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="updateModal.hide()">&times;</button >
+				<h4 class="modal-title" >Update Task</h4 >
+			</div >
+			<div class="modal-body" >
+				<form name="updateForm"  ng-submit="updateForm.$valid && updateTask()"
+				      class="form-horizontal"
+				      novalidate >
+					<ng-include src="'partials/updateForm.html'" ></ng-include >
+				</form >
+			</div >
+		</div >
+
+	</div >
+</div >

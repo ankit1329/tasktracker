@@ -1,0 +1,18 @@
+<div id="createModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="createModal.hide()">&times;</button >
+				<h4 class="modal-title" >Create Task</h4 >
+			</div >
+			<div class="modal-body" >
+				<form  name="createForm" ng-submit="createForm.$valid && createTask()"
+				      class="form-horizontal"
+				      novalidate >
+					<ng-include src="'partials/assigntaskform.html'" ></ng-include >
+				</form >
+			</div >
+		</div >
+
+	</div >
+</div >

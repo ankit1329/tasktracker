@@ -1,0 +1,107 @@
+<div ng-include src="'partials/header.html'"></div>
+<div class="container">
+    <div class="panel">
+        <div class="panel-body">
+            <div ng-if="messages.error" role="alert" class="alert alert-danger">
+                <div ng-repeat="error in messages.error">{{error.msg}}</div>
+            </div>
+            <div ng-if="messages.success" role="alert" class="alert alert-success">
+                <div ng-repeat="success in messages.success">{{success.msg}}</div>
+            </div>
+            <form ng-submit="updateProfile()" class="form-horizontal">
+                <legend>Profile Information</legend>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3">Email</label>
+                    <div class="col-sm-7">
+                        <input type="email" name="email" id="email" class="form-control" ng-model="profile.email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-sm-3">Name</label>
+                    <div class="col-sm-7">
+                        <input type="text" name="name" id="name" class="form-control" ng-model="profile.name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3">Gender</label>
+                    <div class="col-sm-4">
+                        <label class="radio-inline radio col-sm-4">
+              <input type="radio" name="gender" value="male" ng-checked="profile.gender === 'male'" ng-model="profile.gender"><span>Male</span>
+            </label>
+                        <label class="radio-inline col-sm-4">
+              <input type="radio" name="gender" value="female" ng-checked="profile.gender === 'female'"ng-model="profile.gender"><span>Female</span>
+            </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location" class="col-sm-3">Location</label>
+                    <div class="col-sm-7">
+                        <input type="text" name="location" id="location" class="form-control" ng-model="profile.location">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="website" class="col-sm-3">Website</label>
+                    <div class="col-sm-7">
+                        <input type="text" name="website" id="website" class="form-control" ng-model="profile.website">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <button type="submit" class="btn btn-success">Update Profile</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-body">
+
+            <form ng-submit="uploadFile()">
+                <div class="form-group">
+                    <label class="col-sm-3">Profile Picture</label>
+                    <div class="col-sm-4">
+                        <img ng-src="/images/profile-default-male.png" || "{{currentUser.picture}}" class="profile" width="100" height="100">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <label class="custom-file">
+                            <input type="file" id="picture" name="picture" accept="image/*" file-model = "myFile">
+                            <span class="custom-file-control"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-4">
+                        <button type="submit" class="btn btn-success">Upload Picture</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="panel-body">
+            <form ng-submit="changePassword()" class="form-horizontal">
+                <legend>Change Password</legend>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3">New Password</label>
+                    <div class="col-sm-7">
+                        <input type="password" name="password" id="password" class="form-control" ng-model="profile.password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="confirm" class="col-sm-3">Confirm Password</label>
+                    <div class="col-sm-7">
+                        <input type="password" name="confirm" id="confirm" class="form-control" ng-model="profile.confirm">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-3">
+                        <button type="submit" class="btn btn-success">Change Password</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

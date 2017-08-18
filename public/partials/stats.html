@@ -1,0 +1,57 @@
+<div ng-include src="'partials/header.html'"></div>
+<div class="Container xyz">
+    <div class="abc">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card c1 text-center">
+                    <div class="card-block special-card">
+                        <br>
+                        <h3 class="card-title text-center" style="color: lightgrey">Total Number of Tasks</h3>
+                        <br>
+                        <h4 class="card-text text-warning text-center"> </h4>
+                        <!-- <a href="" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                    <kbd>{{stats.statsData.all}}</kbd>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card c2 text-center">
+                    <div class="card-block special-card">
+                        <br>
+                        <h3 class="card-title text-center" style="color: lightgrey">Pending Tasks</h3>
+                        <br>
+                        <h4 class="card-text text-warning text-center"></h4>
+                        <!-- <a href="" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                    <kbd>{{stats.statsData.pend}}</kbd>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card c3 text-center">
+                    <div class="card-block special-card">
+                        <br>
+                        <h3 class="card-title text-center" style="color: lightgrey">Ongoing Tasks</h3>
+                        <br>
+                        <h4 class="card-text text-warning text-center"></h4>
+                        <!-- <a href="" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                    <kbd>{{stats.statsData.work}}</kbd>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card c4 text-center">
+                    <div class="card-block special-card">
+                        <br>
+                        <h3 class="card-title text-center" style="color: lightgrey">Completed Tasks</h3>
+                        <br>
+                        <h4 class="card-text text-warning text-center"></h4>
+                        <!-- <a href="" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                    <kbd>{{stats.statsData.comp}}</kbd>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

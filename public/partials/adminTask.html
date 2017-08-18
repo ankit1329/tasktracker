@@ -1,0 +1,63 @@
+<div ng-include src="'partials/adminheader.html'"></div>
+<div class="Container xyz">
+    <div class="abc">
+        <div class="row">
+            <!-- <div class="col-sm-3"> -->
+            <div><button class="btn btn-success btn-md pull-right" ng-click="showCreateAdminTaskModal()">Create New Task
+    </button ></div>
+            <!-- </div> -->
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card c1 text-center">
+                    <div class="card-block special-card">
+                        <br>
+                        <h3 class="card-title text-center" style="color: lightgrey">Total Number of Tasks</h3>
+                        <br>
+                        <h4 class="card-text text-warning text-center"><kbd>{{stats.statsData.all}}</kbd> </h4>
+                        <a href="/admin/allTasks" class="btn btn-success">Open</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card c2 text-center">
+                    <div class="card-block special-card">
+                        <br>
+                        <h3 class="card-title text-center" style="color: lightgrey">Pending Tasks</h3>
+                        <br>
+                        <h4 class="card-text text-warning text-center"><kbd>{{stats.statsData.pend}}</kbd></h4>
+                        <a href="/admin/pendingTasks" class="btn btn-success">Open</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card c3 text-center">
+                    <div class="card-block special-card">
+                        <br>
+                        <h3 class="card-title text-center" style="color: lightgrey">Ongoing Tasks</h3>
+                        <br>
+                        <h4 class="card-text text-warning text-center"><kbd>{{stats.statsData.work}}</kbd></h4>
+                        <a href="/admin/workingTasks" class="btn btn-success">Open</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card c4 text-center">
+                    <div class="card-block special-card">
+                        <br>
+                        <h3 class="card-title text-center" style="color: lightgrey">Completed Tasks</h3>
+                        <br>
+                        <h4 class="card-text text-warning text-center"><kbd>{{stats.statsData.comp}}</kbd></h4>
+                        <a href="/admin/completedTasks" class="btn btn-success">Open</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

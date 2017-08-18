@@ -1,0 +1,14 @@
+node_modules
+.git/
+.tmp
+.sass-cache
+.idea
+client/bower_components
+dist
+uploads
+npm-debug.log
+*.un~
+.tmp/
+.vscode/
+dist/
+.env
